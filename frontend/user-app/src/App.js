@@ -6,9 +6,6 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import AddressForm from './pages/AddressForm';
-import AddressList from './pages/AddressList';
-import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -32,38 +29,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/addresses" 
-            element={
-              <ProtectedRoute>
-                <AddressList />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/addresses/new" 
-            element={
-              <ProtectedRoute>
-                <AddressForm />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/addresses/edit/:id" 
-            element={
-              <ProtectedRoute>
-                <AddressForm />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/profile" 
-            element={
-              <ProtectedRoute>
-                <Profile />
               </ProtectedRoute>
             } 
           />
