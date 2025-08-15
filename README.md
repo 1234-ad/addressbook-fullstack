@@ -33,7 +33,7 @@ A comprehensive address book management system with separate User and Admin appl
 ### Frontend
 - **React.js** (User App)
 - **React.js** (Admin App)
-- **Material-UI** or **Tailwind CSS**
+- **Material-UI** components
 - **Axios** for API calls
 - **React Router** for navigation
 
@@ -66,7 +66,7 @@ A comprehensive address book management system with separate User and Admin appl
    exit
 
    # Import schema
-   mysql -u root -p addressbook < schema.sql
+   mysql -u root -p addressbook < ../schema.sql
    ```
 
 4. **Environment Configuration**
@@ -82,18 +82,30 @@ A comprehensive address book management system with separate User and Admin appl
 
 ### Frontend Setup
 
+#### User App
 1. **Install User App dependencies**
    ```bash
    cd frontend/user-app
    npm install
-   npm start
    ```
 
-2. **Install Admin App dependencies**
+2. **Start User App**
+   ```bash
+   npm start
+   # Runs on http://localhost:3000
+   ```
+
+#### Admin App
+1. **Install Admin App dependencies**
    ```bash
    cd frontend/admin-app
    npm install
+   ```
+
+2. **Start Admin App**
+   ```bash
    npm start
+   # Runs on http://localhost:3001
    ```
 
 ## 🗄️ Database Schema
@@ -103,6 +115,10 @@ A comprehensive address book management system with separate User and Admin appl
 - **addresses** - Contact information
 - **groups** - Contact groups
 - **address_groups** - Many-to-many relationship
+
+### Default Admin Credentials
+- **Username**: admin
+- **Password**: admin123
 
 ## 🔐 API Endpoints
 
@@ -145,29 +161,55 @@ A comprehensive address book management system with separate User and Admin appl
 
 ## 🚦 Usage
 
-### For Users
+### For Users (Port 3000)
 1. Register/Login to access your address book
 2. Create contacts with detailed information
 3. Assign contacts to groups for organization
 4. Search and filter your contacts
 5. Edit or delete contacts as needed
 
-### For Admins
+### For Admins (Port 3001)
 1. Login with admin credentials
 2. Create and manage groups
 3. Search across all user addresses
 4. Assign addresses to appropriate groups
 5. View dashboard statistics
 
-## 📱 Screen Designs
+## 📱 Application Structure
 
-### UserApp Screens
-1. **Address Creation** - Form with all contact fields
-2. **Group Selection** - Multi-select group assignment
+### UserApp Features
+- **Dashboard** - View and manage all contacts
+- **Contact Management** - Add, edit, delete contacts
+- **Group Assignment** - Organize contacts into groups
+- **Search & Filter** - Find contacts quickly
 
-### AdminApp Screens
-1. **Group Management** - Create/edit/delete groups
-2. **Address Search** - Search and assign addresses to groups
+### AdminApp Features
+- **Admin Dashboard** - System overview and statistics
+- **Group Management** - Create and manage contact groups
+- **Address Search** - Search across all user addresses
+- **Group Assignment** - Assign addresses to groups
+
+## 🚀 Getting Started
+
+1. **Start Backend Server**
+   ```bash
+   cd backend && npm run dev
+   ```
+
+2. **Start User App**
+   ```bash
+   cd frontend/user-app && npm start
+   ```
+
+3. **Start Admin App**
+   ```bash
+   cd frontend/admin-app && npm start
+   ```
+
+4. **Access Applications**
+   - User App: http://localhost:3000
+   - Admin App: http://localhost:3001
+   - API Server: http://localhost:5000
 
 ## 🤝 Contributing
 
@@ -184,5 +226,19 @@ This project is licensed under the MIT License.
 ## 👥 Team
 
 - **Developer**: [Your Name]
-- **Version**: 1.1
+- **Version**: 1.2
 - **Date**: August 2025
+
+## ✅ Project Status
+
+**Completed Features:**
+- ✅ Backend API with all endpoints
+- ✅ Database schema and sample data
+- ✅ User authentication system
+- ✅ User App with contact management
+- ✅ Admin App with group management
+- ✅ Search and filtering functionality
+- ✅ Group assignment features
+- ✅ Dashboard with statistics
+
+**Ready for Production!** 🎉
